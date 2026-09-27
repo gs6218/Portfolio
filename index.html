@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gauri Shedge — Business Analytics &amp; AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#12403F; --teal-deep:#0B2D2C; --coral:#FF6B4A; --paper:#F6F1E7;
+  --ink:#151515; --bg:#FFFFFF; --sub:#5C5C5C;
+  --disp:'Sora',sans-serif; --sans:'Work Sans',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#121212; --ink:#F0EEE9; --sub:#A8A8A8; --paper:#1C1C1C; }
+}
+:root[data-theme="dark"]{ --bg:#121212; --ink:#F0EEE9; --sub:#A8A8A8; --paper:#1C1C1C; }
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.6;}
+.wrap{max-width:900px; margin:0 auto; padding:0 28px;}
+a{color:inherit;}
+
+nav{position:sticky; top:0; z-index:20; background:var(--bg); padding-top:env(safe-area-inset-top,0px);}
+nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
+.brand{font-family:var(--disp); font-weight:700; font-size:17px;}
+.navlinks{display:flex; gap:24px; font-size:14px; overflow-x:auto; white-space:nowrap;}
+.navlinks a{text-decoration:none; color:var(--sub);}
+.navlinks a:hover{color:var(--ink);}
+
+.hero{background:var(--teal); color:var(--paper); padding:80px 0 90px;}
+.hero .eyebrow{font-family:var(--sans); font-size:15px; color:var(--coral); margin:0 0 18px;}
+.hero h1{font-family:var(--disp); font-weight:700; font-size:clamp(36px,6vw,60px); line-height:1.08; margin:0 0 22px; max-width:15ch;}
+.hero p{font-size:18px; max-width:52ch; opacity:.88; margin:0 0 30px;}
+.hero-cta{display:flex; gap:16px; flex-wrap:wrap;}
+.hero-cta a{font-family:var(--disp); font-weight:600; font-size:15px; text-decoration:none;}
+.a-solid{background:var(--coral); color:var(--teal-deep); padding:13px 24px; border-radius:30px;}
+.a-line{color:var(--paper); padding:13px 4px; border-bottom:2px solid var(--coral);}
+
+section{padding:76px 0;}
+h2{font-family:var(--disp); font-weight:700; font-size:30px; margin:0 0 34px;}
+
+.about{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+.about p{font-size:17px; color:var(--sub); margin:0 0 18px;}
+.about strong{color:var(--ink); font-weight:600;}
+.role{padding:0 0 22px; margin-bottom:22px; border-bottom:1px solid #00000018;}
+.role:last-child{border:none; margin:0; padding:0;}
+.role h3{font-family:var(--disp); font-size:16px; margin:0 0 6px;}
+.role p{font-size:14.5px; margin:0; color:var(--sub);}
+
+.skills-band{background:var(--paper);}
+.skillrow{display:flex; gap:60px; flex-wrap:wrap; margin-bottom:8px;}
+.skillcol{flex:1; min-width:210px;}
+.skillcol h3{font-family:var(--disp); font-size:14px; color:var(--coral); margin:0 0 14px; font-weight:600;}
+.skillcol ul{list-style:none; margin:0; padding:0;}
+.skillcol li{font-size:15.5px; padding:6px 0; color:var(--ink);}
+
+.job{display:grid; grid-template-columns:180px 1fr; gap:28px; padding:26px 0; border-top:1px solid #00000014;}
+.job:last-child{border-bottom:1px solid #00000014;}
+.job .when{font-family:var(--disp); font-size:13.5px; color:var(--sub); padding-top:2px;}
+.job h3{margin:0 0 3px; font-family:var(--disp); font-size:18px;}
+.job .org{color:var(--coral); font-size:14.5px; margin-bottom:12px; font-weight:600;}
+.job ul{margin:0; padding-left:18px; color:var(--sub); font-size:15.5px;}
+.job li{margin-bottom:7px;}
+
+.projects{background:var(--teal); color:var(--paper);}
+.projects h2{color:var(--paper);}
+.proj{padding:30px 0; border-top:1px solid #ffffff26;}
+.proj:last-child{border-bottom:1px solid #ffffff26;}
+.proj h3{font-family:var(--disp); font-size:21px; margin:0 0 10px;}
+.proj p{font-size:15.5px; opacity:.85; max-width:65ch; margin:0 0 12px;}
+.stack{font-size:13.5px; color:var(--coral); font-family:var(--disp);}
+
+.edu{display:flex; gap:60px; flex-wrap:wrap;}
+.edu-item{flex:1; min-width:240px;}
+.edu-item h3{font-family:var(--disp); font-size:18px; margin:0 0 6px;}
+.edu-item p{color:var(--sub); font-size:14.5px; margin:2px 0;}
+
+footer{background:var(--ink); color:var(--paper); padding:80px 0 calc(80px + env(safe-area-inset-bottom,0px));}
+footer h2{color:var(--paper);}
+footer p{color:#C9C9C9; font-size:17px; max-width:48ch; margin:0 0 30px;}
+.contactrow{display:flex; gap:28px; flex-wrap:wrap; font-size:16px;}
+.contactrow a{text-decoration:none; font-family:var(--disp); font-weight:600; color:var(--coral);}
+.copyright{margin-top:48px; font-size:12.5px; color:#8A8A8A;}
+
+@media (max-width:720px){
+  .about{grid-template-columns:1fr;}
+  .job{grid-template-columns:1fr; gap:6px;}
+  .skillrow{gap:30px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Gauri Shedge</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Open to Co-op &amp; full-time roles, 2026-2027</p>
+    <h1>I turn filings, spreadsheets, and models into decisions people trust.</h1>
+    <p>MS in Business Analytics and AI at RIT, working across financial analysis, statistics, and applied ML — and, as a University of Advancement Ambassador, the one explaining it all afterward.</p>
+    <div class="hero-cta">
+      <a class="a-solid" href="#contact">Get in touch</a>
+      <a class="a-line" href="#projects">See projects</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <p>I'm a Master's student in <strong>Business Analytics and AI at Rochester Institute of Technology</strong>, with a B.Tech in Computer Science from MGM University, India. My recent work has centered on financial risk — building an NLP system that read 132 SEC filings to flag early signs of corporate distress, and a research role automating analysis across 495 corporate layoff events.</p>
+        <p>Communication is the other half of the job. A model is only useful once someone understands what it's telling them, and that's the skill I practice constantly outside the terminal.</p>
+      </div>
+      <div>
+        <div class="role">
+          <h3>University of Advancement Ambassador — RIT</h3>
+          <p>Represent RIT to donors, alumni, and prospective students, presenting the university's story clearly to audiences from high schoolers to senior donors.</p>
+        </div>
+        <div class="role">
+          <h3>Orientation Leader — RIT</h3>
+          <p>Guide incoming students through their first days on campus, turning logistics and expectations into clear, reassuring communication.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills-band">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skillrow">
+      <div class="skillcol">
+        <h3>Finance &amp; Business</h3>
+        <ul><li>Requirements Elicitation</li><li>Stakeholder Analysis</li><li>Cost-Benefit Analysis</li><li>ROI Analysis</li><li>Profitability Analysis</li><li>Risk Analysis</li></ul>
+      </div>
+      <div class="skillcol">
+        <h3>Statistics &amp; ML</h3>
+        <ul><li>Statistical Analysis</li><li>Regression Analysis</li><li>A/B Testing</li><li>Predictive Modeling</li><li>Scikit-learn · TensorFlow · PyTorch</li></ul>
+      </div>
+      <div class="skillcol">
+        <h3>Data &amp; Reporting</h3>
+        <ul><li>Power BI · Tableau</li><li>Excel · ETL</li><li>Dashboard Development</li><li>KPI Reporting</li><li>Data Reconciliation</li></ul>
+      </div>
+    </div>
+    <div class="skillrow">
+      <div class="skillcol">
+        <h3>Programming</h3>
+        <ul><li>Python · R · SQL</li><li>JavaScript · Java</li><li>MATLAB · Bash</li></ul>
+      </div>
+      <div class="skillcol">
+        <h3>Cloud &amp; Tools</h3>
+        <ul><li>AWS · Azure</li><li>PostgreSQL · MS SQL Server</li><li>Git · Agile</li></ul>
+      </div>
+      <div class="skillcol">
+        <h3>Communication</h3>
+        <ul><li>Public Speaking</li><li>Stakeholder Presentations</li><li>Executive Reporting</li><li>Cross-Cultural Teams</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="when">Aug '26 – Present</div>
+      <div>
+        <h3>Data and Research Analyst</h3>
+        <div class="org">RIT · Rochester, NY</div>
+        <ul><li>Automated data collection and analysis for 495 corporate layoff events using Python, Pandas, and SEC EDGAR, building a structured dataset for trend analysis and academic research.</li></ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Dec '24 – May '25</div>
+      <div>
+        <h3>Research Intern</h3>
+        <div class="org">Applied Technology Solutions, Inc. · Lexington, MA</div>
+        <ul>
+          <li>Developed an AI-powered cybersecurity chatbot using NLP and OpenAI Whisper for real-time voice interaction, reducing response time by 35%.</li>
+          <li>Designed Zero Trust, microservices-based AI solutions using small language models to improve data privacy, speed, and scalability.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Jan '24 – Jul '24</div>
+      <div>
+        <h3>AI Engineer</h3>
+        <div class="org">Tech Mahindra · Pune, India</div>
+        <ul>
+          <li>Supported development of the Indus multilingual LLM by validating Indic-language datasets, improving model performance on low-resource languages.</li>
+          <li>Built React and Django-based workflows that streamlined annotation for a 25+ person team, improving turnaround time by 30%.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+
+    <div class="proj">
+      <h3>Financial Distress Early-Warning Predictor</h3>
+      <p>NLP system analyzing 132 SEC filings from 23 companies to track shifts in debt, liquidity, and restructuring language. Flagged 7 of 12 historical distress cases within 24 months via an interactive risk dashboard.</p>
+      <div class="stack">Python · NLP · Machine Learning</div>
+    </div>
+
+    <div class="proj">
+      <h3>AI Strategy Report Generator</h3>
+      <p>Analytics pipeline automating revenue, TAM, competitive-positioning, and SWOT analysis across 50 retail companies, with executive PowerPoint reports auto-generated.</p>
+      <div class="stack">Pandas · Matplotlib · python-pptx</div>
+    </div>
+
+    <div class="proj">
+      <h3>Loan Approval Prediction System</h3>
+      <p>End-to-end analysis of a 600+ record financial dataset — cleaning, feature engineering, and a cost-benefit tradeoff model quantifying the financial impact of approval decisions.</p>
+      <div class="stack">Python · Scikit-learn · Risk Modeling</div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="edu-item">
+        <h3>M.S. Business Analytics and AI</h3>
+        <p>Rochester Institute of Technology · Rochester, NY</p>
+        <p>Aug 2025 – Aug 2027 · GPA 3.2/4</p>
+      </div>
+      <div class="edu-item">
+        <h3>B.Tech in Computer Science</h3>
+        <p>MGM University · Aurangabad, India</p>
+        <p>Aug 2020 – Jul 2024 · GPA 3.4/4</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>Open to Fall 2026 co-op, internship, and full-time roles in business, data, and financial analytics.</p>
+    <div class="contactrow">
+      <a href="mailto:gs6218@rit.edu">gs6218@rit.edu</a>
+      <a href="tel:5853143156">(585) 314-3156</a>
+      <a href="https://www.linkedin.com/in/gauri-shedge-195480236/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="copyright">© 2026 Gauri Shedge · Rochester, NY</div>
+  </div>
+</footer>
+
+</body>
+</html>
